@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cookbook</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style type="text/css">
+#BarraHTML {
+background-color: #000;
+    padding: 1px;
+    position: fixed;
+    width: 100%;
+z-index: 10000;
+}
+#BarraHTML ul{
+   list-style-type: none;
+
+
+}
+#BarraHTML li{
+   display: inline;
+   text-align: center;
+   margin: 0 0 0 0;
+}
+#BarraHTML li a {
+   padding: 2px 7px 2px 7px;
+   text-decoration: none;
+}
+#BarraHTML li a:hover{
+   background-color: #333333;
+   color: #ffffff;
+}
+#texto{
+padding: 60px 0 0 0;
+}
+   </style>
+
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <footer>
+      <p>Author: Joel Ziegler</p>
+      <p><a href="joel.ziegler.jz.232@gmail.com"></a></p>
+    </footer>
+
+    <div id="BarraHTML">
+<ul>
+
+<li><a href="http://127.0.0.1:3000/authors">Autores</a></li>
+<li><a href="http://127.0.0.1:3000/recipes">Recetas</a></li>
+<li><a href="http://127.0.0.1:3000/categories">Categorias</a></li>
+<li><a href="http://127.0.0.1:3000/recipe_types">Tipo de recetas</a></li>
+</ul>
+</div>
+<div id="texto">
+
+</div>
+
+    <%= link_to "Autores", authors_path %> |
+    <%= link_to "Recetas", recipes_path %> |
+    <%= link_to "Categorías", categories_path %> |
+    <%= link_to "Tipo de recetas", recipe_types_path %> |
+    <br>
+    <%= yield %>
+
+
+  </body>
+</html>
